@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.2//EN" "http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+<validators>
+    <field name="username">
+        <field-validator type="requiredstring">
+            <message>You must enter a name</message>
+        </field-validator>
+    </field>
+    <field name="pass">
+        <field-validator type="requiredstring">
+            <message>You must enter a pass</message>
+        </field-validator>
+    </field>
+    <field name="age">
+        <field-validator type="short">
+            <param name="min">13</param>
+            <param name="max">19</param>
+            <message>Only people ages ${min} to ${max} may take this quiz</message>
+        </field-validator>
+    </field>
+    <field name="test_jquery">
+    	<field-validator type="date">
+    		<param name="minExpression">${mindate}</param>
+    		<param name="maxExpression">${maxdate}</param>
+    		<message>超出范围，应该在${getText("format.date.display",{min})} ${getText("format.date.display",{max})}</message>
+    	</field-validator>
+    </field>
+</validators>

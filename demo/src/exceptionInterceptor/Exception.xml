@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd"> 
+  <struts>
+     <package name="default" extends="struts-default">
+         <global-results>
+             <result name="sqlex">/sqlerror.jsp</result>
+         </global-results>
+
+         <global-exception-mappings>
+             <exception-mapping exception="java.sql.SQLException" result="sqlex"/>
+         </global-exception-mappings>
+
+         <action name="test" class="exceptionInterceptor.CepException">
+           
+             <exception-mapping exception="java.io.IOException" result="ioex"/>
+             <result name="ioex">/ioerror.jsp</result>
+             <result name="success" type="freemarker">/login_intercep_suc.jsp</result>
+         </action>
+     </package>
+ </struts>

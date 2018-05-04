@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package name="demo3" namespace="/sec" extends="struts-default">
+		<interceptors>
+		<interceptor name="demo" class="interceptor.Login_inter"/>
+			<interceptor-stack name="interctr">
+				<interceptor-ref name="demo"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<global-results>
+			<result name="login">/login.jsp</result>
+		</global-results>
+		<action name="myAction" class="controller.MyAction">
+			<interceptor-ref name="interctr"></interceptor-ref>
+			<result>/login_intercep_suc.jsp</result>
+		</action>
+	</package>
+	<package name="validation" extends="struts-default">
+		<action name="validationaction" class="controller.ValidationAction">
+			<result>/validation_suc.jsp</result>
+			<result name="input">/validation_input.jsp</result>
+		</action>
+		<action name="fileUpload" class="controller.FileUpload">
+			<result>/fileUpload_res.jsp</result>
+		</action>
+		<action name="doMultipleUploadUsingArray" class="controller.MultipleFileUploadUsingArrayAction">
+			<result>/fileUpload_res1.jsp</result>
+		</action>
+		<action name="multiUpload" class="controller.UploadMulti">
+		<result>/fileUpload_res1.jsp</result>
+		</action>
+	</package>
+	<include file="exceptionInterceptor/Exception.xml"></include>
+	<!-- <package name="login">
+		<action name="loginCheck" class="bean.Stu"></action>
+	</package> -->
+</struts>
