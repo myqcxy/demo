@@ -9,6 +9,9 @@ import org.apache.struts2.ServletActionContext;
 public class IOUtils {
 	String realpath;
 	
+	public void setRealpath(String realpath) {
+		this.realpath = realpath;
+	}
 	public IOUtils(String relativePath) {
 		String realpath = ServletActionContext.getServletContext().getRealPath(relativePath);
 		this.realpath = realpath;
