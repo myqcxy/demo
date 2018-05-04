@@ -13,10 +13,8 @@ public class FileUpload extends ActionSupport {
 	String fileFileName;
 	@Override
 	public String execute() throws Exception {
-		String realpath = ServletActionContext.getServletContext().getRealPath("/upload");
-		File f = new File(realpath);
-		if(!f.exists()){ f.mkdir();}
-		FileUtils.copyFile(file, new File(f,fileFileName));
+		IOUtils io = new IOUtils("/upload");
+		io.fileCopy(file, fileFileName);
 		return SUCCESS;
 	}
 	public File getFile() {

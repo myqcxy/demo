@@ -31,12 +31,8 @@ public class UploadMulti extends ActionSupport {
 	}
 	@Override
 	public String execute() throws Exception {
-		String realpath = ServletActionContext.getServletContext().getRealPath("/upload");
-		File file = new File(realpath);
-		if(!file.exists()) file.mkdir();
-		for(int i=0;i<upload.length;i++){
-			FileUtils.copyFile(upload[i], new File(file,uploadFileName[i]));
-		}
+		IOUtils io = new IOUtils("/upload");
+		io.filesCopy(upload, uploadFileName);
 		return SUCCESS;
 	}
 	
