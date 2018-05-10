@@ -24,6 +24,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
+  	<a href="add_stu.jsp">增加学生</a>
     <s:form action="loginCheck">
     	<s:textfield name="username" label="用户名"/>
     	<s:textfield name="pass" label="密码"/>

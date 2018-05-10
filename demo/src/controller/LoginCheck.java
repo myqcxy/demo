@@ -2,12 +2,20 @@ package controller;
 
 import com.opensymphony.xwork2.ActionSupport;
 
+import bean.Stu;
 import dao.StuDAO;
 import dao.StuDAOImp;
 
 public class LoginCheck extends ActionSupport {
 	String username;
 	String pass;
+	Stu stu;
+	public Stu getStu() {
+		return stu;
+	}
+	public void setStu(Stu stu) {
+		this.stu = stu;
+	}
 	public String getUsername() {
 		return username;
 	}
@@ -21,21 +29,19 @@ public class LoginCheck extends ActionSupport {
 		this.pass = pass;
 	}
 	
-	@Override
-	public void validate() {
+	public String add() throws Exception{
 		StuDAO check = new StuDAOImp();
-		try {
-			if(!check.check(username, pass)){
-				addFieldError("stu.username","用户名或者密码不正确");	
-			}
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
+		boolean isRight=check.add(stu);
+		
+		return isRight ? SUCCESS:ERROR;
 	}
 	@Override
 	public String execute() throws Exception {
-		// TODO Auto-generated method stub
-		return super.execute();
+		StuDAO check = new StuDAOImp();
+		
+		boolean isRight=check.check(username, pass);
+		
+		return isRight ? SUCCESS:ERROR;
 	}
 }

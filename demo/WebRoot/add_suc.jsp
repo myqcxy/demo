@@ -10,7 +10,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'index.jsp' starting page</title>
+    <title>My JSP 'login.jsp' starting page</title>
+    
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
@@ -19,18 +20,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+
   </head>
   
   <body>
-  <s:url var="myAction" action="myAction" namespace="/sec"/>
-    <a href="${myAction}">实验三 拦截器</a> <br>
-    <a href="interceptionTest">Exception拦截器</a>
-    <br>validation
-    <a href="validation_input.jsp">validtion_input</a>
-    <br>
-    <a href="fileupload.jsp">文件上传</a><br>
-    test5
-    <a href="input.jsp">实验五jdbc</a>
-    <a href="stuList">显示所有学生信息</a>
+    add succeed
   </body>
 </html>

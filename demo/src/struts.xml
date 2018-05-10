@@ -33,6 +33,25 @@
 		<action name="multiUpload" class="controller.UploadMulti">
 		<result>/fileUpload_res1.jsp</result>
 		</action>
+		
+	</package>
+	<package name="test5" extends="struts-default">
+		<action name="loginCheck" class="controller.LoginCheck">
+			<result>/login_suc.jsp</result>
+			<result name="error">/login_err.jsp</result>
+		</action>
+		<action name="addStu" class="controller.LoginCheck" method="add">
+			<result>/add_suc.jsp</result>
+			<result name="error">/add_error.jsp</result>
+		</action>
+		<action name="stuList" class="controller.StuAction" method="list">
+			<result>/stu_list.jsp</result>
+		</action>
+		<action name="stu_del" class="controller.StuAction" method="del">
+			<result>/stu_del_suc.jsp</result>
+			<result name="error">/stu_del_error.jsp</result>
+			
+		</action>
 	</package>
 	<include file="exceptionInterceptor/Exception.xml"></include>
 	<!-- <package name="login">

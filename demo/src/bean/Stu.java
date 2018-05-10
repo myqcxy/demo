@@ -9,11 +9,9 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class Stu extends ActionSupport{
 	private long id;
-	private String username, pass;
-	private double java, math, os;
-
-	public Stu() {
-	}
+	private String username,cla;
+	short age;
+	private float java;
 
 	public long getId() {
 		return id;
@@ -24,44 +22,37 @@ public class Stu extends ActionSupport{
 	}
 
 	public String getUsername() {
-		return username.toString();
+		return username;
 	}
 
 	public void setUsername(String username) {
 		this.username = username;
 	}
 
-	public String getPass() {
-		return pass;
+	public String getCla() {
+		return cla;
 	}
 
-	public void setPass(String pass) {
-		this.pass = pass;
+	public void setCla(String cla) {
+		this.cla = cla;
 	}
 
-	public double getJava() {
+	public short getAge() {
+		return age;
+	}
+
+	public void setAge(short age) {
+		this.age = age;
+	}
+
+	public float getJava() {
 		return java;
 	}
 
-	public void setJava(double java) {
+	public void setJava(float java) {
 		this.java = java;
 	}
 
-	public double getMath() {
-		return math;
-	}
-
-	public void setMath(double math) {
-		this.math = math;
-	}
-
-	public double getOs() {
-		return os;
-	}
-
-	public void setOs(double os) {
-		this.os = os;
-	}
 	@Override public String toString(){
 		ResourceBundle bundle
 		  =ResourceBundle.getBundle("demo.msg");
