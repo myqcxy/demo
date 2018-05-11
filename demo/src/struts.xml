@@ -48,7 +48,7 @@
 			<result>/stu_list.jsp</result>
 		</action>
 		<action name="stu_del" class="controller.StuAction" method="del">
-			<result>/stu_del_suc.jsp</result>
+			<result type="redirect">/stu_del_suc.jsp</result>
 			<result name="error">/stu_del_error.jsp</result>
 			
 		</action>

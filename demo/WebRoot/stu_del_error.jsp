@@ -17,7 +17,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-	<meta http-equiv="refresh" content="5;url=add_stu.jsp">
+	<meta http-equiv="refresh" content="5;url=stu_list.jsp">
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
@@ -25,6 +25,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    del error(5秒跳转到信息页面)
+    学号为<s:property value="id"/>的学生删除失败！请重试(5秒跳转到信息页面)
   </body>
 </html>

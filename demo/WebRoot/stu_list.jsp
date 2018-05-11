@@ -24,8 +24,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
+
   <s:debug/>
-    <table style="border:1px solid green"><tr><td>id<td>username<td>class<td>age<td>java<td>action
+    <table border="1" style="border:1px solid green"><tr><td>id<td>username<td>class<td>age<td>java<td>action
     <s:iterator value="stus" var="row">
     <tr>
       <td><s:property value="#row[0]"/>
@@ -35,7 +36,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       <td><s:property value="#row[4]"/>
       <td>
       <s:url var="editUrl" action="stu_edit">
-         <s:param name="stu.id" value="#row[0]"/>
+         <s:param name="id" value="#row[0]"/>
       </s:url>
       <a href="${editUrl}">edit</a>
       <s:url var="delUrl" action="stu_del">
