@@ -3,6 +3,8 @@
     "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
     "http://struts.apache.org/dtds/struts-2.5.dtd">
 <struts>
+<constant name="struts.devMode" value="true"/>
+	<constant name="struts.custom.i18n.resources" value="msg"></constant>
 	<package name="demo3" namespace="/sec" extends="struts-default">
 		<interceptors>
 		<interceptor name="demo" class="interceptor.Login_inter"/>
@@ -29,6 +31,16 @@
 		</action>
 		<action name="doMultipleUploadUsingArray" class="controller.MultipleFileUploadUsingArrayAction">
 			<result>/fileUpload_res1.jsp</result>
+		</action>
+		<action name="uploadLimSize" class="controller.FileUpload">
+			<result>/fileUpload_res.jsp</result>
+			<result name="input">/uploadLimSize.jsp</result>
+			
+			<interceptor-ref name="defaultStack">
+			<param name="allowedTypes">image/png,image/jpeg</param>
+			  <param name="fileUpload.maximumSize">5000</param>
+			  
+			</interceptor-ref>
 		</action>
 		<action name="multiUpload" class="controller.UploadMulti">
 		<result>/fileUpload_res1.jsp</result>

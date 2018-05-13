@@ -22,6 +22,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
+  <a href="login_i18n.jsp">实验二 国际化</a><br>
   <s:url var="myAction" action="myAction" namespace="/sec"/>
     <a href="${myAction}">实验三 拦截器</a> <br>
     <a href="interceptionTest">Exception拦截器</a>

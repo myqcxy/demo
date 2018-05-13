@@ -28,6 +28,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	<s:file name="file" label="file"></s:file>
     	<s:submit></s:submit>
     </s:form>
+    <br>限制文件大小
+    <s:form action="uploadLimSize" enctype="multipart/form-data">
+    	<s:file name="file" label="file"/>
+    	<s:submit></s:submit>
+    </s:form>
+    
      <s:form action="multiUpload" method="post" theme="simple" enctype="multipart/form-data">
   	<s:file name="upload" label="file 1"/>
   	<s:file name="upload" label="file 2"/>
